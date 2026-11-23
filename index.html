@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b14">
+  <meta name="description" content="Portafolio profesional de Regina del Carmen Cáceres Benique, estudiante de Administración de Redes y Comunicaciones en Tecsup.">
+  <title>Regina Cáceres | Portafolio profesional</title>
+  <style>
+    :root {
+      --bg: #080b14; --panel: #101827; --panel2: #0c1422; --text: #f4f7fb;
+      --muted: #a5b1c2; --blue: #258cff; --cyan: #4de1f2; --line: rgba(130,165,210,.2);
+      --shadow: 0 24px 70px rgba(0,0,0,.35);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; color: var(--text); background:
+        radial-gradient(ellipse at 80% 5%, rgba(37,140,255,.17), transparent 34rem),
+        radial-gradient(ellipse at 5% 40%, rgba(77,225,242,.08), transparent 28rem), var(--bg);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1080px, calc(100% - 40px)); margin: auto; }
+    header { padding: 22px 0; }
+    .nav { display:flex; justify-content:space-between; align-items:center; gap:16px; }
+    .brand { font-weight:800; letter-spacing:.04em; }
+    .brand span { color:var(--cyan); }
+    .nav a { color:var(--muted); font-size:.92rem; margin-left:20px; }
+    .nav a:hover, .text-link:hover { color:var(--cyan); }
+    .hero { padding: 72px 0 62px; display:grid; grid-template-columns:1.4fr .8fr; gap:50px; align-items:center; }
+    .eyebrow { color:var(--cyan); text-transform:uppercase; letter-spacing:.17em; font-size:.76rem; font-weight:800; }
+    h1 { font-size:clamp(2.6rem, 6vw, 4.8rem); line-height:1.04; letter-spacing:-.055em; margin:16px 0; }
+    h1 span { color:var(--cyan); }
+    .role { color:#d7e3f2; font-size:1.15rem; font-weight:650; max-width:650px; }
+    .intro { color:var(--muted); max-width:620px; margin:18px 0 28px; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:9px; border:1px solid var(--line); padding:12px 17px; border-radius:12px; font-weight:750; font-size:.93rem; transition:.2s; }
+    .btn.primary { background:linear-gradient(120deg,var(--blue),#1767d5); border-color:transparent; box-shadow:0 10px 28px rgba(37,140,255,.23); }
+    .btn:hover { transform:translateY(-2px); border-color:var(--cyan); }
+    .profile-card { background:linear-gradient(145deg,rgba(21,39,63,.95),rgba(12,20,34,.95)); border:1px solid var(--line); border-radius:26px; padding:28px; box-shadow:var(--shadow); position:relative; overflow:hidden; }
+    .profile-card:before { content:""; position:absolute; width:190px;height:190px; border:1px solid rgba(77,225,242,.22); border-radius:50%; right:-65px;top:-75px; box-shadow:0 0 0 22px rgba(77,225,242,.035),0 0 0 45px rgba(77,225,242,.025); }
+    .avatar { width:94px;height:94px;border-radius:24px;display:grid;place-items:center;background:linear-gradient(135deg,#1477e8,#48d9e9);font-size:2rem;font-weight:900;color:#06101c; margin-bottom:20px; }
+    .profile-card h2 { margin:0 0 4px; font-size:1.25rem; }
+    .profile-card p { color:var(--muted); margin:0; font-size:.92rem; }
+    .status { display:inline-flex;align-items:center;gap:8px;margin-top:22px;color:#c8f8e3;font-size:.82rem; }
+    .dot { width:8px;height:8px;background:#38d996;border-radius:50%;box-shadow:0 0 12px #38d996; }
+    section { padding:34px 0; }
+    .section-head { margin-bottom:20px; }
+    .section-head h2 { font-size:1.75rem; letter-spacing:-.03em; margin:5px 0; }
+    .section-head p { color:var(--muted); margin:0; }
+    .grid { display:grid;grid-template-columns:repeat(2,1fr);gap:16px; }
+    .tile { display:flex;gap:16px;align-items:flex-start;padding:22px;background:rgba(16,24,39,.82);border:1px solid var(--line);border-radius:18px;transition:.2s; }
+    .tile:hover { transform:translateY(-3px);border-color:rgba(77,225,242,.55);background:rgba(18,33,53,.95); }
+    .ico { flex:0 0 44px;width:44px;height:44px;border-radius:13px;display:grid;place-items:center;background:rgba(37,140,255,.14);color:var(--cyan);font-size:1.25rem; }
+    .tile h3 { margin:0 0 4px;font-size:1.02rem; }
+    .tile p { margin:0;color:var(--muted);font-size:.88rem; }
+    .tile .arrow { margin-left:auto;color:var(--cyan);font-size:1.1rem; }
+    .about { background:linear-gradient(120deg,rgba(16,24,39,.9),rgba(12,20,34,.65));border:1px solid var(--line);border-radius:22px;padding:26px; }
+    .about p { color:#c0ccda;margin:0; }
+    .tags { display:flex;flex-wrap:wrap;gap:9px;margin-top:18px; }
+    .tag { font-size:.82rem;color:#cdeaff;border:1px solid rgba(77,225,242,.22);background:rgba(37,140,255,.08);padding:7px 11px;border-radius:999px; }
+    .contact { text-align:center;padding:38px 24px;background:linear-gradient(130deg,rgba(21,85,157,.28),rgba(16,24,39,.88));border:1px solid var(--line);border-radius:24px; }
+    .contact p { color:var(--muted); }
+    footer { color:#8291a5;text-align:center;padding:30px 0 38px;font-size:.82rem; }
+    .small { font-size:.78rem;color:#8291a5;margin-top:12px; }
+    @media (max-width:760px) {
+      .wrap { width:min(100% - 28px, 600px); }
+      .nav { align-items:flex-start; flex-direction:column; }
+      .nav-links a { margin:0 16px 0 0; }
+      .hero { padding:45px 0 35px;grid-template-columns:1fr;gap:28px; }
+      .profile-card { max-width:440px; }
+      .grid { grid-template-columns:1fr; }
+      section { padding:26px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <nav class="nav" aria-label="Navegación principal">
+      <div class="brand">REGINA<span>.</span>CB</div>
+      <div class="nav-links">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#portafolio">Portafolio</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" aria-labelledby="nombre">
+      <div>
+        <div class="eyebrow">Portafolio profesional · Tecsup</div>
+        <h1 id="nombre">Regina del Carmen<br><span>Cáceres Benique</span></h1>
+        <div class="role">Estudiante de Administración de Redes y Comunicaciones</div>
+        <p class="intro">Hola, soy Regina, estudiante de Administración de Redes y Comunicaciones en Tecsup. Actualmente curso el sexto semestre de la carrera y estoy construyendo mi camino profesional en el ámbito de las tecnologías de información.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://drive.google.com/drive/folders/1mD1VQSaDF5W6rpSXFLsGvi9Q0fKaVRW9?usp=drive_link" target="_blank" rel="noopener">▤ Ver mi CV ↗</a>
+          <a class="btn" href="mailto:regina.caceres@tecsup.edu.pe">✉ Contactarme</a>
+        </div>
+      </div>
+      <aside class="profile-card">
+        <div class="avatar" aria-label="Iniciales RC">RC</div>
+        <h2>Regina Cáceres</h2>
+        <p>Administración de Redes y Comunicaciones</p>
+        <p>Tecsup · 6.º semestre</p>
+        <div class="status"><span class="dot"></span> En formación profesional</div>
+        <div class="small">Este espacio puede actualizarse con una fotografía profesional.</div>
+      </aside>
+    </section>
+
+    <section id="sobre-mi">
+      <div class="section-head">
+        <div class="eyebrow">Perfil</div>
+        <h2>Sobre mí</h2>
+        <p>Una presentación breve de mi formación y presencia profesional.</p>
+      </div>
+      <div class="about">
+        <p>Soy estudiante de Tecsup y me encuentro desarrollando conocimientos y experiencias en el área de redes y comunicaciones. En este espacio reúno mi información profesional, contenido audiovisual y proyectos académicos para compartir mi proceso de aprendizaje y evolución.</p>
+        <div class="tags">
+          <span class="tag">Redes y comunicaciones</span>
+          <span class="tag">Tecnologías de información</span>
+          <span class="tag">Aprendizaje continuo</span>
+          <span class="tag">Proyectos tecnológicos</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="portafolio">
+      <div class="section-head">
+        <div class="eyebrow">Conecta y conoce mi trabajo</div>
+        <h2>Mi espacio profesional</h2>
+        <p>Accede a mis perfiles, documentos y proyectos.</p>
+      </div>
+      <div class="grid">
+        <a class="tile" href="https://www.linkedin.com/in/regina-del-carmen-caceres-benique-51a547384" target="_blank" rel="noopener">
+          <div class="ico">in</div><div><h3>LinkedIn</h3><p>Mi perfil y trayectoria profesional.</p></div><span class="arrow">↗</span>
+        </a>
+        <a class="tile" href="https://www.youtube.com/@ReginaCB-dm5ss" target="_blank" rel="noopener">
+          <div class="ico">▶</div><div><h3>YouTube</h3><p>Videos, demostraciones y contenido.</p></div><span class="arrow">↗</span>
+        </a>
+        <a class="tile" href="https://drive.google.com/drive/folders/1mD1VQSaDF5W6rpSXFLsGvi9Q0fKaVRW9?usp=drive_link" target="_blank" rel="noopener">
+          <div class="ico">▤</div><div><h3>Curriculum Vitae</h3><p>Consulta mi CV y documentos profesionales.</p></div><span class="arrow">↗</span>
+        </a>
+        <a class="tile" href="https://drive.google.com/drive/folders/1jUPt_tjSO203FTRxsQVj6omHh4R_4BAn?usp=drive_link" target="_blank" rel="noopener">
+          <div class="ico">⌘</div><div><h3>Proyectos</h3><p>Conoce mis proyectos y trabajos académicos.</p></div><span class="arrow">↗</span>
+        </a>
+        <a class="tile" href="mailto:regina.caceres@tecsup.edu.pe">
+          <div class="ico">✉</div><div><h3>Correo electrónico</h3><p>regina.caceres@tecsup.edu.pe</p></div><span class="arrow">↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <div class="contact">
+        <div class="eyebrow">Hablemos</div>
+        <h2>¿Conectamos?</h2>
+        <p>Estoy abierta a conectar, aprender y conocer oportunidades de desarrollo profesional.</p>
+        <a class="btn primary" href="mailto:regina.caceres@tecsup.edu.pe">Enviar un correo ↗</a>
+      </div>
+    </section>
+  </main>
+  <footer class="wrap">© <span id="year"></span> Regina del Carmen Cáceres Benique · Portafolio profesional</footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
